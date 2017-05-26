@@ -1,0 +1,63 @@
+version: '2'
+services:
+    ##
+    mysql:
+        image: mysql
+        build: ./services/mysql
+        ports:
+            - "13306:3306"
+        restart: always
+        tty: true
+        privileged: true
+        stdin_open: true
+        env_file:
+            - docker.env
+    ##
+    redis:
+        image: redis
+        build: ./services/redis
+        ports:
+            - "16379:6379"
+        restart: always
+        tty: true
+        privileged: true
+        stdin_open: true
+        env_file:
+            - docker.env
+    ##
+    rabbitmq:
+        image: rabbitmq
+        build: ./services/rabbitmq
+        ports:
+            - "5674:5672"
+            - "15674:15672"
+        restart: always
+        tty: true
+        privileged: true
+        stdin_open: true
+        env_file:
+            - docker.env
+    ##
+    elasticsearch:
+        image: elasticsearch
+        build: ./services/elasticsearch
+        ports:
+            - "19200:9200"
+        restart: always
+        tty: true
+        privileged: true
+        stdin_open: true
+        env_file:
+            - docker.env
+    ##
+    mongodb:
+        image: mongo
+        build: ./services/mongodb
+        ports:
+            - "27018:27017"
+        restart: always
+        tty: true
+        privileged: true
+        stdin_open: true
+        env_file:
+            - docker.env
