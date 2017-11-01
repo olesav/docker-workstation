@@ -1,2 +1,4 @@
 #!/bin/bash
-docker stop $(docker ps -a -q)
+
+NAME_PREFIX=_localws
+docker-compose -p $NAME_PREFIX stop

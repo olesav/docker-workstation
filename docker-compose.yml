@@ -3,7 +3,7 @@ services:
     ##
     mysql:
         image: mysql
-        build: ./services/mysql
+        build: './services/mysql'
         ports:
             - "13306:3306"
         restart: always
@@ -15,7 +15,7 @@ services:
     ##
     redis:
         image: redis
-        build: ./services/redis
+        build: './services/redis'
         ports:
             - "16379:6379"
         restart: always
@@ -27,7 +27,7 @@ services:
     ##
     rabbitmq:
         image: rabbitmq
-        build: ./services/rabbitmq
+        build: './services/rabbitmq'
         ports:
             - "5674:5672"
             - "15674:15672"
@@ -40,7 +40,7 @@ services:
     ##
     elasticsearch:
         image: elasticsearch
-        build: ./services/elasticsearch
+        build: './services/elasticsearch'
         ports:
             - "19200:9200"
         restart: always
@@ -52,7 +52,7 @@ services:
     ##
     mongodb:
         image: mongo
-        build: ./services/mongodb
+        build: './services/mongodb'
         ports:
             - "27018:27017"
         restart: always
